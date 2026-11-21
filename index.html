@@ -78,6 +78,24 @@ section.block{padding:56px 0 8px}
 .chip{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font:500 14px "DM Sans",sans-serif;color:var(--ink);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 
+/* Flat no. field */
+.flat{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:16px}
+.flat span{font-weight:700}
+.flat input{flex:1;min-width:140px;max-width:220px;font:500 16px "DM Sans",sans-serif;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.flat input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-l)}
+.flat small{color:var(--muted);font-size:13px;flex-basis:100%}
+.flat.saved input{border-color:var(--green)}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;position:relative}
+.quote::before{content:"“";font-family:Fraunces,serif;font-size:64px;line-height:.6;color:var(--orange);opacity:.35}
+.quote p{font-size:17px;line-height:1.45}
+.quote .who{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:14px}
+.quote .av{width:36px;height:36px;border-radius:50%;background:var(--chip);color:var(--orange-d);font-weight:800;display:flex;align-items:center;justify-content:center}
+.quote .who small{display:block;color:var(--muted)}
+.stars{color:#f2a530;letter-spacing:2px;font-size:14px}
+
 /* Cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .2s ease}
@@ -173,6 +191,7 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
     <nav class="nav">
       <a href="#menu">Menu</a>
       <a href="#khaman">Khaman</a>
+      <a href="#love">Reviews</a>
       <a href="#party">Party orders</a>
       <a href="#order">How to order</a>
       <a href="#contact">Contact</a>
@@ -225,6 +244,11 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
       <h2>The menu</h2>
       <p>We cook a few items each day. Message us to see today's list, or pre-order any dish below.</p>
     </div>
+    <label class="flat">
+      <span>🏠 Your flat no.</span>
+      <input id="flat" type="text" inputmode="text" autocomplete="off" maxlength="20" placeholder="e.g. D-308">
+      <small>We add it to your WhatsApp order.</small>
+    </label>
     <div class="filters" role="group" aria-label="Filter menu">
       <button class="chip" aria-pressed="true" data-f="all">All</button>
       <button class="chip" aria-pressed="false" data-f="vada">Vadas &amp; bondas</button>
@@ -252,6 +276,21 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
         </div>
         <a class="btn btn-wa" data-wa="Hi Crunch Time! I want to order Khaman Dhokla. Quantity: " href="#">Order Khaman</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="love">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What neighbours say</h2>
+      <p>Real messages from our Crunch Time WhatsApp group.</p>
+    </div>
+    <div class="quotes">
+      <figure class="quote"><span class="stars">★★★★★</span><p>Very delicious pani puri! Both the panis had superb taste and the masala was very nice. Loved it 😋</p><figcaption class="who"><span class="av">A</span><span><b>Anuradha</b><small>S Block · Pani Puri</small></span></figcaption></figure>
+      <figure class="quote"><span class="stars">★★★★★</span><p>Samosas were so yummy, and in this weather they were so hot too ❤️</p><figcaption class="who"><span class="av">S</span><span><b>Swathi</b><small>Aloo Samosa</small></span></figcaption></figure>
+      <figure class="quote"><span class="stars">★★★★★</span><p>Amazing food. My family loved it 🙏</p><figcaption class="who"><span class="av">❤</span><span><b>A happy family</b><small>Crunch Time group</small></span></figcaption></figure>
+      <figure class="quote"><span class="stars">★★★★★</span><p>Yummy pani puri… healthy too 👏</p><figcaption class="who"><span class="av">A</span><span><b>Asha ji</b><small>D Block · Pani Puri</small></span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -369,21 +408,36 @@ document.getElementById("grid").innerHTML = MENU.map(d => `
       ${d.a ? `<div class="alt">${esc(d.a)}</div>` : ""}
       <div class="row">
         <div class="price">₹${d.r}<span class="portion">${d.p}</span></div>
-        <a class="btn btn-sm add" href="${wa(`Hi Crunch Time! I want to order ${d.n} (${d.p} – ₹${d.r}). Quantity: `)}" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-sm add" data-wa="${esc(`Hi Crunch Time! I want to order ${d.n} (${d.p} – ₹${d.r}).\nQuantity: `)}" href="#">Order</a>
       </div>
     </div>
   </article>`).join("");
 
 document.getElementById("req").innerHTML = REQ.map(d => `
-  <a href="${wa(`Hi Crunch Time! Can you make ${d.n}? Please share the price.`)}" target="_blank" rel="noopener">
+  <a data-wa="${esc(`Hi Crunch Time! Can you make ${d.n}? Please share the price.`)}" href="#">
     ${d.img ? `<img src="img/${d.img}.jpg" alt="${esc(d.n)}" loading="lazy">` : `<span class="em">${d.emoji}</span>`}
     <span><b>${esc(d.n)}</b><small>${esc(d.s)} · Ask for price</small></span>
   </a>`).join("");
 
-document.querySelectorAll("[data-wa]").forEach(a => {
-  a.href = `https://wa.me/${PHONE}?text=` + encodeURIComponent(decodeURIComponent(a.dataset.wa));
-  a.target = "_blank"; a.rel = "noopener";
+// Flat number: saved on this phone, added to every WhatsApp draft
+const flatIn = document.getElementById("flat");
+try { flatIn.value = localStorage.getItem("ct_flat") || ""; } catch (e) {}
+function refreshLinks() {
+  const flat = flatIn.value.trim();
+  flatIn.parentElement.classList.toggle("saved", !!flat);
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    let msg = a.dataset.wa;
+    try { msg = decodeURIComponent(msg); } catch (e) {}
+    msg += `\nFlat no: ${flat}`;
+    a.href = wa(msg);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+}
+flatIn.addEventListener("input", () => {
+  try { localStorage.setItem("ct_flat", flatIn.value.trim()); } catch (e) {}
+  refreshLinks();
 });
+refreshLinks();
 
 document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
