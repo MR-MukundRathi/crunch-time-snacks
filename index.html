@@ -183,6 +183,7 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
 .partybar b{color:#ffd9a8}
 .partybar .go{background:#fff;color:var(--green);font-weight:700;border-radius:999px;padding:4px 12px;font-size:13px;white-space:nowrap}
 .partybar:hover .go{background:#ffd9a8;color:var(--ink)}
+@media(max-width:560px){.partybar .wrap{flex-wrap:nowrap;justify-content:space-between;padding:8px 16px;font-size:13px}.partybar .lg{display:none}.partybar .pt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 
 /* Offer today */
 .today{padding:20px 0 4px}
@@ -225,7 +226,7 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
 
 <a class="partybar" href="#party">
   <span class="wrap">
-    <span>🎉 <b>Party &amp; bulk orders</b> for 30–40 guests · book 1 day before</span>
+    <span class="pt">🎉 <b>Party<span class="lg"> &amp; bulk</span> orders</b> for 30–40<span class="lg"> guests · book 1 day before</span></span>
     <span class="go">Get a quote →</span>
   </span>
 </a>
