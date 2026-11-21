@@ -68,6 +68,17 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1}
 .band{background:var(--ink);color:#fff}
 .band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding:16px;font-size:15px}
 .band b{color:#ffc58f}
+.band .clone{display:none}
+/* Phones: slow, endless ticker */
+@media(max-width:560px){
+  .band{overflow:hidden}
+  .band .wrap{flex-wrap:nowrap;width:max-content;max-width:none;gap:0;padding:14px 0;animation:ticker 26s linear infinite}
+  .band span{white-space:nowrap;padding:0 18px}
+  .band span::after{content:"•";color:#ffc58f;opacity:.6;margin-left:36px}
+  .band .clone{display:inline}
+}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.band .wrap{animation:none}}
 
 /* Sections */
 section.block{padding:56px 0 8px}
@@ -504,6 +515,9 @@ document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () =
   document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
   filter = b.dataset.f; applyFilter();
 }));
+
+(() => { const w = document.querySelector(".band .wrap");
+  [...w.children].forEach(el => { const c = el.cloneNode(true); c.classList.add("clone"); c.setAttribute("aria-hidden", "true"); w.appendChild(c); }); })();
 
 function renderAll(loaded) { renderToday(loaded); renderMenu(); refreshLinks(); }
 renderAll(false);
