@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crunch Time — Homemade Veg Snacks at D-308</title>
+<meta name="description" content="Crunch Time: homemade crunchy veg snacks. Sabudana Vada, Samosa, Pani Puri, Khaman Dhokla and more. Most plates ₹100. Party and bulk orders. DM 89894 24629.">
+<meta property="og:title" content="Crunch Time — Homemade Veg Snacks">
+<meta property="og:description" content="Most plates ₹100. Pick-up from D-308. Party and bulk orders welcome.">
+<meta property="og:image" content="img/aloo-samosa.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥟</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf5ea; --card:#fffdf8; --ink:#2b1d12; --muted:#76624f; --line:#eadbc4;
+  --orange:#e8641c; --orange-d:#c24e10; --green:#2f7d4a; --green-l:#e5f2e7; --wa:#1fa855; --chip:#fbe7d6;
+  --r:18px; --shadow:0 1px 2px rgba(60,30,0,.06),0 8px 24px rgba(60,30,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:88px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1}
+
+/* Top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(251,245,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:22px;text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--orange)}
+.nav{display:flex;gap:20px;font-weight:500;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+@media(max-width:720px){.nav{display:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178f47}
+.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-sm{padding:9px 14px;font-size:14px}
+.ico{width:18px;height:18px;flex:none}
+
+/* Hero */
+.hero{padding:48px 0 32px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.eyebrow{display:inline-block;background:var(--green-l);color:var(--green);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:800;margin:16px 0 14px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:480px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 20px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.facts b{color:var(--ink)}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:1/1}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.collage img:first-child{grid-row:span 2}
+@media(max-width:820px){.hero{padding:28px 0 16px}.hero .wrap{grid-template-columns:1fr;gap:24px}.collage{aspect-ratio:4/3}}
+
+/* Price band */
+.band{background:var(--ink);color:#fff}
+.band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding:16px;font-size:15px}
+.band b{color:#ffc58f}
+
+/* Sections */
+section.block{padding:56px 0 8px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);max-width:520px}
+
+/* Filters */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font:500 14px "DM Sans",sans-serif;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .2s ease}
+.card:hover{transform:translateY(-3px)}
+.card .ph{position:relative;aspect-ratio:1/1;background:var(--chip)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.tag.g{background:var(--green)}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:20px;font-weight:600}
+.card .alt{font-size:13px;color:var(--muted);margin-top:-2px}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:10px}
+.price{font-family:Fraunces,serif;font-weight:800;font-size:24px;color:var(--orange-d)}
+.portion{font-size:13px;color:var(--muted);display:block;font-family:"DM Sans",sans-serif;font-weight:500}
+.card .add{background:var(--green-l);color:var(--green)}
+.card .add:hover{background:var(--green);color:#fff}
+.ph.noimg{display:flex;align-items:center;justify-content:center;font-size:72px}
+
+/* Khaman feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.feature img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.feature .txt{padding:32px}
+.feature h3{font-size:32px;font-weight:800;margin:10px 0 8px}
+.feature p{color:var(--muted)}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.size{border:1.5px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.size b{display:block;font-family:Fraunces,serif;font-size:22px;color:var(--orange-d)}
+.size span{font-size:13px;color:var(--muted)}
+@media(max-width:720px){.feature{grid-template-columns:1fr}.feature .txt{padding:22px}}
+
+/* On request list */
+.req{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.req a{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-decoration:none}
+.req img,.req .em{width:56px;height:56px;border-radius:10px;object-fit:cover;flex:none}
+.req .em{display:flex;align-items:center;justify-content:center;background:var(--chip);font-size:28px}
+.req b{display:block;font-weight:700}
+.req small{color:var(--muted)}
+
+/* Party */
+.party{background:linear-gradient(135deg,#2f7d4a,#1e5a34);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.party h2{font-size:clamp(30px,4.4vw,46px);font-weight:800}
+.party p{opacity:.9;margin:12px 0 20px;font-size:17px}
+.party ul{list-style:none;display:grid;gap:10px}
+.party li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.party li span{font-size:20px;line-height:1.2}
+.party .btn-wa{background:#fff;color:var(--green)}
+.party .btn-wa:hover{background:#eafff0}
+@media(max-width:820px){.party{grid-template-columns:1fr;padding:26px 20px}}
+
+/* How to order */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step::before{counter-increment:s;content:counter(s);display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
+.step b{display:block;font-size:17px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:15px}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* Contact */
+footer{margin-top:64px;background:var(--ink);color:#f3e8da;padding:44px 0 28px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer h3{font-size:26px;color:#fff;margin-bottom:8px}
+footer h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#c9b59c;margin-bottom:10px}
+footer p,footer a{font-size:15px;color:#f3e8da}
+footer .phone{font-family:Fraunces,serif;font-size:28px;font-weight:800;color:#ffc58f;text-decoration:none;display:inline-block;margin:4px 0 12px}
+footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:13px;color:#a8957f}
+@media(max-width:820px){footer .wrap{grid-template-columns:1fr}}
+
+/* Sticky order bar (mobile) */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(251,245,234,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;gap:10px}
+.sticky .btn{flex:1}
+@media(min-width:821px){.sticky{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">Crunch <span>Time</span></a>
+    <nav class="nav">
+      <a href="#menu">Menu</a>
+      <a href="#khaman">Khaman</a>
+      <a href="#party">Party orders</a>
+      <a href="#order">How to order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-wa btn-sm" data-wa="Hi Crunch Time! I want to place an order." href="#">
+      <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.1-4.7-4-4.8-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2z"/></svg>
+      Order
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Homemade · Pure veg · D-308</span>
+      <h1>Crunchy snacks, made at <em>home</em> with love.</h1>
+      <p class="lead">Fresh Sabudana Vada, Samosa, Pani Puri, Khaman Dhokla and more. Cooked every day by the Rathi family. Green chutney comes free.</p>
+      <div class="ctas">
+        <a class="btn btn-wa" data-wa="Hi Crunch Time! What's available today?" href="#">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.4-.7-2.9-1.1-4.7-4-4.8-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.2z"/></svg>
+          Order on WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#menu">See the menu</a>
+      </div>
+      <div class="facts">
+        <span>🕓 Pick-up <b>4–7 PM</b></span>
+        <span>📍 <b>D-308</b></span>
+        <span>🎉 Party orders for <b>30–40</b></span>
+      </div>
+    </div>
+    <div class="collage">
+      <img src="img/sabudana-vada.jpg" alt="Sabudana Vada with green chutney" fetchpriority="high">
+      <img src="img/aloo-samosa.jpg" alt="Aloo Samosa">
+      <img src="img/pani-puri.jpg" alt="Pani Puri">
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <span>Most plates just <b>₹100</b></span>
+    <span>Green chutney <b>included</b></span>
+    <span>Pre-order and we serve you <b>better</b></span>
+  </div>
+</div>
+
+<section class="block" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The menu</h2>
+      <p>We cook a few items each day. Message us to see today's list, or pre-order any dish below.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter menu">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="vada">Vadas &amp; bondas</button>
+      <button class="chip" aria-pressed="false" data-f="fried">Samosa &amp; kachori</button>
+      <button class="chip" aria-pressed="false" data-f="chaat">Chaat</button>
+      <button class="chip" aria-pressed="false" data-f="light">Steamed &amp; light</button>
+      <button class="chip" aria-pressed="false" data-f="fast">Fasting (vrat)</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="block" id="khaman">
+  <div class="wrap">
+    <div class="feature">
+      <img src="img/khaman-dhokla.jpg" alt="Gujarati Khaman Dhokla" loading="lazy">
+      <div class="txt">
+        <span class="eyebrow">Available any day on demand</span>
+        <h3>Gujarati Khaman Dhokla</h3>
+        <p>Soft, spongy and steamed, not fried. Comes with homemade green chutney.</p>
+        <div class="sizes">
+          <div class="size"><b>₹100</b><span>150 g</span></div>
+          <div class="size"><b>₹150</b><span>250 g</span></div>
+          <div class="size"><b>₹250</b><span>500 g</span></div>
+        </div>
+        <a class="btn btn-wa" data-wa="Hi Crunch Time! I want to order Khaman Dhokla. Quantity: " href="#">Order Khaman</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="request">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>On request</h2>
+      <p>We make these when you ask. Message us for the price and day.</p>
+    </div>
+    <div class="req" id="req"></div>
+  </div>
+</section>
+
+<section class="block" id="party">
+  <div class="wrap">
+    <div class="party">
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff">Party &amp; bulk orders</span>
+        <h2 style="margin-top:14px">Hosting? We cook for your guests.</h2>
+        <p>Birthdays, kitty parties, house-warmings, pooja and office meetings. We take orders for small gatherings of 30–40 people.</p>
+        <a class="btn btn-wa" data-wa="Hi Crunch Time! I want a bulk / party order.%0AOccasion: %0ADate & time: %0ANo. of guests: %0AItems: " href="#">Ask for a party quote</a>
+      </div>
+      <ul>
+        <li><span>📅</span><div>Place bulk orders <b>at least 1 day before</b>.</div></li>
+        <li><span>🍽️</span><div>Mix any items from the menu. We help you pick the right quantity.</div></li>
+        <li><span>🟢</span><div>Green chutney included. Pani Puri comes with khatta-meetha pani and masala.</div></li>
+        <li><span>💬</span><div>Tell us the date, time, number of guests and items. We confirm the price on WhatsApp.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="order">
+  <div class="wrap">
+    <div class="sec-head"><h2>How to order</h2></div>
+    <div class="steps">
+      <div class="step"><b>Message us</b><p>WhatsApp or call 89894 24629. Ask what's cooking today.</p></div>
+      <div class="step"><b>Pre-order</b><p>Order by about 3 PM for same-day snacks. Pre-orders help us serve you better.</p></div>
+      <div class="step"><b>Pick up</b><p>Collect from D-308, usually between 4 and 7 PM.</p></div>
+      <div class="step"><b>Enjoy</b><p>Hot, fresh and homemade. Tell us what you liked!</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Crunch Time</h3>
+      <p>Homemade crunchy veg snacks by the Rathi family.</p>
+      <a class="phone" href="tel:+918989424629">89894 24629</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-wa btn-sm" data-wa="Hi Crunch Time!" href="#">WhatsApp</a>
+        <a class="btn btn-sm" style="background:#fff;color:var(--ink)" href="tel:+918989424629">Call</a>
+      </div>
+    </div>
+    <div>
+      <h4>Pick-up</h4>
+      <p>D-Block, Flat 308<br>(Rathi's)</p>
+    </div>
+    <div>
+      <h4>Timings</h4>
+      <p>Snacks: 4 PM – 7 PM<br>Order by 3 PM for the same day<br>Bulk orders: 1 day before</p>
+    </div>
+    <div class="copy">© Crunch Time · All items are homemade and pure veg. Menu changes day to day.</div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn btn-ghost" href="tel:+918989424629">Call</a>
+  <a class="btn btn-wa" data-wa="Hi Crunch Time! I want to place an order." href="#">Order on WhatsApp</a>
+</div>
+
+<script>
+const PHONE = "918989424629";
+const MENU = [
+  {n:"Sabudana Vada", p:"5 pcs", r:100, img:"sabudana-vada", c:["vada","fast"], tag:"Bestseller"},
+  {n:"Aloo Samosa", p:"5 pcs", r:100, img:"aloo-samosa", c:["fried"], tag:"Our best seller"},
+  {n:"Veg Cutlet", p:"5 pcs", r:100, img:"veg-cutlet", c:["fried"]},
+  {n:"Aloo Vada", a:"Batata Vada · Aloo Bonda", p:"5 pcs", r:100, img:"aloo-bonda", c:["vada"]},
+  {n:"Mirchi Vada", p:"5 pcs", r:100, img:"mirchi-vada", c:["vada"]},
+  {n:"Palak Methi Bhaji Vada", p:"5 pcs", r:100, img:"palak-methi-vada", c:["vada"]},
+  {n:"Moong Dal Kachori", p:"4 pcs", r:100, img:"moong-dal-kachori", c:["fried"]},
+  {n:"Matar Kachori", a:"Batana Kachori", p:"4 pcs", r:100, emoji:"🫛", c:["fried"]},
+  {n:"Moong Dal Mangode", p:"200 g", r:100, img:"moong-dal-mangode", c:["vada"]},
+  {n:"Aloo & Onion Bhajji", p:"200 g", r:100, img:"bhajji", c:["fried"]},
+  {n:"Bread Pakoda", p:"4 pcs", r:100, img:"bread-pakoda", c:["fried"]},
+  {n:"Veg Cheese Paneer Sandwich", p:"4 pcs", r:100, img:"sandwich", c:["light"]},
+  {n:"Vada Pav", p:"1 plate", r:100, img:"vada-pav", c:["vada"]},
+  {n:"Pani Puri", a:"With khatta-meetha pani + masala", p:"20 pcs", r:100, img:"pani-puri", c:["chaat"], tag:"Loved by all", g:1},
+  {n:"Rava Idli", p:"1 plate", r:100, img:"rava-idli", c:["light"]},
+  {n:"Rava Dhokla", p:"150 g", r:100, img:"rava-dhokla", c:["light"]},
+  {n:"Sabudana Cutlet", p:"1 plate", r:100, img:"sabudana-cutlet", c:["fast"], tag:"Vrat special", g:1},
+  {n:"Sabudana Khichdi", p:"1 plate", r:100, img:"sabudana-khichdi", c:["fast"], tag:"Vrat special", g:1},
+];
+const REQ = [
+  {n:"Katori Chaat", s:"Crispy katori, filled fresh", img:"katori-chaat"},
+  {n:"Dahi Vada", s:"Soft vadas in sweet curd", img:"dahi-vada"},
+  {n:"Breakfast Salads", s:"Sprouts, veggies, paneer", img:"salad"},
+  {n:"Moth Kachori", s:"Crispy, spicy moth filling", emoji:"🥟"},
+  {n:"Meethe Chawal", s:"Sweet saffron rice", emoji:"🍚"},
+  {n:"Sukhe Gatte ki Sabzi", s:"Rajasthani style", emoji:"🍛"},
+];
+const wa = t => `https://wa.me/${PHONE}?text=${encodeURIComponent(t)}`;
+const esc = s => s.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+document.getElementById("grid").innerHTML = MENU.map(d => `
+  <article class="card" data-c="${d.c.join(" ")}">
+    <div class="ph${d.img ? "" : " noimg"}">
+      ${d.img ? `<img src="img/${d.img}.jpg" alt="${esc(d.n)}" loading="lazy" width="640" height="640">` : d.emoji}
+      ${d.tag ? `<span class="tag${d.g ? " g" : ""}">${d.tag}</span>` : ""}
+    </div>
+    <div class="body">
+      <h3>${esc(d.n)}</h3>
+      ${d.a ? `<div class="alt">${esc(d.a)}</div>` : ""}
+      <div class="row">
+        <div class="price">₹${d.r}<span class="portion">${d.p}</span></div>
+        <a class="btn btn-sm add" href="${wa(`Hi Crunch Time! I want to order ${d.n} (${d.p} – ₹${d.r}). Quantity: `)}" target="_blank" rel="noopener">Order</a>
+      </div>
+    </div>
+  </article>`).join("");
+
+document.getElementById("req").innerHTML = REQ.map(d => `
+  <a href="${wa(`Hi Crunch Time! Can you make ${d.n}? Please share the price.`)}" target="_blank" rel="noopener">
+    ${d.img ? `<img src="img/${d.img}.jpg" alt="${esc(d.n)}" loading="lazy">` : `<span class="em">${d.emoji}</span>`}
+    <span><b>${esc(d.n)}</b><small>${esc(d.s)} · Ask for price</small></span>
+  </a>`).join("");
+
+document.querySelectorAll("[data-wa]").forEach(a => {
+  a.href = `https://wa.me/${PHONE}?text=` + encodeURIComponent(decodeURIComponent(a.dataset.wa));
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
+  const f = b.dataset.f;
+  document.querySelectorAll(".card").forEach(c => c.style.display = (f === "all" || c.dataset.c.split(" ").includes(f)) ? "" : "none");
+}));
+</script>
+</body>
+</html>
