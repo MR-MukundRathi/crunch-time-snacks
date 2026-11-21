@@ -15,11 +15,11 @@ window.CT = (() => {
     {n:"Bread Pakoda", p:"4 pcs", r:100, img:"bread-pakoda", c:["fried"]},
     {n:"Veg Cheese Paneer Sandwich", p:"4 pcs", r:100, img:"sandwich", c:["light"]},
     {n:"Vada Pav", p:"1 plate", r:100, img:"vada-pav", c:["vada"]},
-    {n:"Pani Puri", a:"With khatta-meetha pani + masala", p:"20 pcs", r:100, img:"pani-puri", c:["chaat"], tag:"Loved by all", g:1},
+    {n:"Pani Puri", a:"With khatta-meetha pani + masala", p:"20 pcs", r:100, img:"pani-puri", c:["chaat"]},
     {n:"Rava Idli", p:"1 plate", r:100, img:"rava-idli", c:["light"]},
     {n:"Rava Dhokla", p:"150 g", r:100, img:"rava-dhokla", c:["light"]},
-    {n:"Sabudana Cutlet", p:"1 plate", r:100, img:"sabudana-cutlet", c:["fast"], tag:"Vrat special", g:1},
-    {n:"Sabudana Khichdi", p:"1 plate", r:100, img:"sabudana-khichdi", c:["fast"], tag:"Vrat special", g:1},
+    {n:"Sabudana Cutlet", p:"1 plate", r:100, img:"sabudana-cutlet", c:["fast"]},
+    {n:"Sabudana Khichdi", p:"1 plate", r:100, img:"sabudana-khichdi", c:["fast"]},
     {n:"Khaman Dhokla", a:"150 g ₹100 · 250 g ₹150 · 500 g ₹250", p:"150 g", r:100, img:"khaman-dhokla", c:["light"], feature:1},
   ].map(d => ({...d, id: slug(d.n)}));
   const REQ = [
