@@ -506,6 +506,8 @@ function refreshLinks() {
   document.querySelectorAll("[data-wa]").forEach(a => {
     let msg = a.dataset.wa;
     try { msg = decodeURIComponent(msg); } catch (e) {}
+    // Orders also ask for a pick-up time (party drafts already ask for date & time)
+    if (/order/i.test(msg) && !/Date & time/.test(msg)) msg += "\nPick-up time: ";
     a.href = wa(msg + "\nFlat no: ");
     a.target = "_blank"; a.rel = "noopener";
   });
