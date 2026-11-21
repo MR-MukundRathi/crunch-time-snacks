@@ -314,11 +314,6 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding
       <h2>The menu</h2>
       <p>We cook a few items each day. Message us to see today's list, or pre-order any dish below.</p>
     </div>
-    <label class="flat">
-      <span>🏠 Your flat no.</span>
-      <input id="flat" type="text" inputmode="text" autocomplete="off" maxlength="20" placeholder="e.g. D-308">
-      <small>We add it to your WhatsApp order.</small>
-    </label>
     <div class="filters" role="group" aria-label="Filter menu">
       <button class="chip" aria-pressed="true" data-f="all">All</button>
       <button class="chip" aria-pressed="false" data-f="vada">Vadas &amp; bondas</button>
@@ -495,24 +490,15 @@ function applyFilter() {
 }
 
 
-// Flat number: saved on this phone, added to every WhatsApp draft
-const flatIn = document.getElementById("flat");
-try { flatIn.value = localStorage.getItem("ct_flat") || ""; } catch (e) {}
+// Every WhatsApp draft ends with a blank "Flat no:" line for the customer to fill in
 function refreshLinks() {
-  const flat = flatIn.value.trim();
-  flatIn.parentElement.classList.toggle("saved", !!flat);
   document.querySelectorAll("[data-wa]").forEach(a => {
     let msg = a.dataset.wa;
     try { msg = decodeURIComponent(msg); } catch (e) {}
-    msg += `\nFlat no: ${flat}`;
-    a.href = wa(msg);
+    a.href = wa(msg + "\nFlat no: ");
     a.target = "_blank"; a.rel = "noopener";
   });
 }
-flatIn.addEventListener("input", () => {
-  try { localStorage.setItem("ct_flat", flatIn.value.trim()); } catch (e) {}
-  refreshLinks();
-});
 
 document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
